@@ -1,0 +1,4 @@
+﻿<Solution>
+  <Project Path="Formula.Tests\Formula.Tests.csproj" Type="Classic C#" />
+  <Project Path="Formula\Formula.csproj" Type="Classic C#" />
+</Solution>
