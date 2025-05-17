@@ -11,25 +11,6 @@ public class SumExpression : Expression
         Expressions.AddRange(expressions);
     }
 
-    public Expression ToExpression()
-    {
-        if (!Expressions.Any())
-            throw new InvalidOperationException("No expressions to sum.");
-
-        Expression sum = Expressions.First();
-        foreach (var expr in Expressions.Skip(1))
-        {
-            sum = Expression.Add(sum, expr);
-        }
-
-        return sum;
-    }
-
-    public LambdaExpression ToLambda(IEnumerable<ParameterExpression> parameters)
-    {
-        return Expression.Lambda(ToExpression(), parameters);
-    }
-
     public override Expression Reduce()
     {
         var reducedExpressions = Expressions

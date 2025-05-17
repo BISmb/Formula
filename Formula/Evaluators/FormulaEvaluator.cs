@@ -41,8 +41,19 @@ public class FormulaEvaluator : IFormulaEvaluator
         return result;
     }
 
+    public void WithFunctions(Type type)
+    {
+        ExpressionBuilder.WithFunctions(type);
+    }
+
     private Expression Parse(Token[] tokens)
     {
         return _expressionBuilder.Build(tokens);
     }
 }
+
+/* Custom Expression (Add-ins):
+ - Determine match (string) 
+ - (Tokenized As Extension)
+ - Return an Expression (Build)
+ */
